@@ -2,8 +2,9 @@
 #!/usr/bin/env python
 
 import os
-import sys
 import re
+import sys
+
 
 def get_version(package):
     """
@@ -43,7 +44,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        'Django>=1.8',
+        'Django>=3.2',
     ],
     license="BSD",
     zip_safe=False,
@@ -53,6 +54,7 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 1.8',
         'Framework :: Django :: 1.9',
+        'Framework :: Django :: 4.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
@@ -61,5 +63,6 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.11',
     ],
 )

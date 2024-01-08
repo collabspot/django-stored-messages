@@ -1,13 +1,11 @@
 from __future__ import unicode_literals
 
-from django.contrib.auth import get_user_model
-from django.test import TestCase, RequestFactory
-from django.utils.six.moves import reload_module
+from importlib import reload as reload_module
 
 import mock
-
-from stored_messages import storage
-from stored_messages import settings
+from django.contrib.auth import get_user_model
+from django.test import RequestFactory, TestCase
+from stored_messages import settings, storage
 
 
 class BaseTest(TestCase):
@@ -32,6 +30,7 @@ class BackendBaseTest(BaseTest):
     Given the dynamic nature of Stored Messages settings, retrieving the backend class when we
     need to ovveride settings is a little bit tricky
     """
+
     def setUp(self):
         super(BackendBaseTest, self).setUp()
         self.backend = settings.stored_messages_settings.STORAGE_BACKEND()
